@@ -1,7 +1,7 @@
 /// @description 여기에 설명 삽입
 // 이 에디터에 코드를 작성할 수 있습니다
 LIVE
-
+//show_debug_log(1)
 size = 1;
 
 xspd = 0;
@@ -29,7 +29,7 @@ function grow()
 	var len = 0;
 	while(a)
 	{
-		for(var i = 0; i < 360; i++)
+		for(var i = 90; i < 360+90; i++)
 		{
 			if(!place_meeting(x+lengthdir_x(len,i),y+lengthdir_y(len,i),obj_sol))
 			{
@@ -39,6 +39,8 @@ function grow()
 				break;
 			}
 		}
-		len += 0.1;
+		len += 50*obj_player.size;
 	}
+	
+	len = -1;
 }

@@ -4,14 +4,14 @@ LIVE
 xspd += (keyboard_check(vk_right)-keyboard_check(vk_left))*5*size;
 xspd /= 1.3;
 
-if(keyboard_check_pressed(vk_up) and place_meeting(x,y+1,obj_sol)){yspd -= 20*(sqrt(size));}
+if(keyboard_check_pressed(vk_up) and place_meeting(x,y+1,obj_sol)){yspd -= 30*(sqrt(size));}
 
 yspd += 1;
 
 var _xspd = xspd;
 var _yspd = yspd;
 
-var move_sep = 1;
+var move_sep = size;
 
 while(1)
 {
@@ -68,9 +68,31 @@ while(1)
 	}
 }
 
-if(place_meeting(x,y+move_sep,obj_sol)){yspd = 0;}
-if(place_meeting(x+move_sep,y,obj_sol) or place_meeting(x-move_sep,y,obj_sol)){xspd *= -0.2;}
-if(place_meeting(x,y-move_sep,obj_sol)){yspd *= -0.6;}
+if(place_meeting(x,y+move_sep,obj_sol))
+{
+	var entity = instance_place(x,y+move_sep,obj_sol);
+	if(instance_exists(entity))
+	{
+		yspd = 0;
+	}
+}
+if(place_meeting(x+move_sep,y,obj_sol) or place_meeting(x-move_sep,y,obj_sol))
+{
+	var entity = instance_place(x+move_sep,y,obj_sol);
+	if(entity == noone){var entity = instance_place(x-move_sep,y,obj_sol);}
+	if(instance_exists(entity))
+	{
+		xspd *= -0.2;
+	}
+}
+if(place_meeting(x,y-move_sep,obj_sol))
+{
+	var entity = instance_place(x,y-move_sep,obj_sol);
+	if(instance_exists(entity))
+	{
+		yspd *= -0.6;
+	}
+}
 
 
 

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_entity_test",
+  "name": "obj_entity_chair_1",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
@@ -31,9 +31,12 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Sprite7",
-    "path": "sprites/Sprite7/Sprite7.yy",
+    "name": "spr_chair_1",
+    "path": "sprites/spr_chair_1/spr_chair_1.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_chair_1_mask",
+    "path": "sprites/spr_chair_1_mask/spr_chair_1_mask.yy",
+  },
   "visible": true,
 }
